@@ -14,4 +14,4 @@ export default defineConfig({
 })
 
 ```
-[示例]<img src="1.png">
+[示例]<img src="./1.png">
