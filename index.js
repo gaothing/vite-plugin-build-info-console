@@ -1,9 +1,9 @@
 
-import fs from 'fs';
-import path from 'path';
+const  fs =require('fs') ;
+const path =require('path') ;
 
-export default (options) => {
-  const { output } = options;
+module.exports= (options) => {
+  const  output  = options?.output;
   let env;
   return {
     name:'vite-plugin-build-info-console',
@@ -16,7 +16,7 @@ export default (options) => {
         
       const dateString = new Date().toLocaleString();
       const windowConf = `window.__APP__CONFIG__`;
-      const configStr = `${windowConf}=${JSON.stringify(options)};
+      const configStr = `${windowConf}=${JSON.stringify(options??{output:'dist'})};
       Object.freeze(${windowConf});
       Object.defineProperty(window, "__APP__CONFIG__", {
         configurable: false,
